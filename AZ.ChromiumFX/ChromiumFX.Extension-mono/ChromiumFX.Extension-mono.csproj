@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B55DAD59-AECD-4CEE-B709-7DA2DFA19320}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>ChromiumFX.Extensionmono</RootNamespace>
+    <AssemblyName>ChromiumFX.Extension</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <Compile Include="..\ChromiumFX.Extension\ChromiumStartup.cs">
+      <Link>ChromiumStartup.cs</Link>
+    </Compile>
+    <Compile Include="..\ChromiumFX.Extension\EmbeddedResourceHandler.cs">
+      <Link>EmbeddedResourceHandler.cs</Link>
+    </Compile>
+    <Compile Include="..\ChromiumFX.Extension\EmbeddedSchemeHandlerFactory.cs">
+      <Link>EmbeddedSchemeHandlerFactory.cs</Link>
+    </Compile>
+    <Compile Include="..\ChromiumFX.Extension\LocalResourceHandler.cs">
+      <Link>LocalResourceHandler.cs</Link>
+    </Compile>
+    <Compile Include="..\ChromiumFX.Extension\LocalSchemeHandlerFactory.cs">
+      <Link>LocalSchemeHandlerFactory.cs</Link>
+    </Compile>
+    <Compile Include="..\ChromiumFX.Extension\MimeHelper.cs">
+      <Link>MimeHelper.cs</Link>
+    </Compile>
+    <Compile Include="..\ChromiumFX.Extension\ResourceHelper.cs">
+      <Link>ResourceHelper.cs</Link>
+    </Compile>
+    <Compile Include="..\ChromiumFX.Extension\Properties\AssemblyInfo.cs">
+      <Link>Properties\AssemblyInfo.cs</Link>
+    </Compile>
+    <Compile Include="..\ChromiumFX.Extension\Properties\Resources.Designer.cs">
+      <Link>Properties\Resources.Designer.cs</Link>
+    </Compile>
+    <Compile Include="..\ChromiumFX.Extension\Properties\Settings.Designer.cs">
+      <Link>Properties\Settings.Designer.cs</Link>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\ChromiumFX.Extension\Properties\Resources.resx">
+      <Link>Properties\Resources.resx</Link>
+    </None>
+    <None Include="..\ChromiumFX.Extension\Properties\Settings.settings">
+      <Link>Properties\Settings.settings</Link>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Windows" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Drawing" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\chromiumfx-orign\ChromiumFX\ChromiumFX.csproj">
+      <Project>{36972B7C-3A3A-465F-B064-51B525FD4C14}</Project>
+      <Name>ChromiumFX</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ChromiumFX.WebBrowser\ChromiumFX.WebBrowser.csproj">
+      <Project>{DFADE311-9298-4CE0-B893-0DC6A1D6AEE1}</Project>
+      <Name>ChromiumFX.WebBrowser</Name>
+    </ProjectReference>
+  </ItemGroup>
+</Project>
