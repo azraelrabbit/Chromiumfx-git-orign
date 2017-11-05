@@ -1,0 +1,3 @@
+[submodule "chromiumfx-orign"]
+	path = chromiumfx-orign
+	url = https://github.com/azraelrabbit/chromiumfx-orign.git
